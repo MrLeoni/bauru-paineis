@@ -108,7 +108,7 @@ function bauru_paineis_scripts() {
 	
 	wp_enqueue_style( 'bootstrap-grid', get_template_directory_uri() . '/assets/css/bootstrap-grid.css' );
 	
-	wp_enqueue_style( 'bauru-paineis-style', get_stylesheet_uri(), array('bootstrap-grid') );
+	wp_enqueue_style( 'bauru-paineis-style', get_stylesheet_uri(), array('bootstrap-grid', 'font-awesome') );
 	
 	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/assets/css/font-awesome.min.css' );
 	
@@ -120,9 +120,9 @@ function bauru_paineis_scripts() {
 	
 	wp_enqueue_script( 'bauru-paineis-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 	
-	wp_enqueue_script( 'bxSliderScript', get_template_directory_uri() . '/js/jquery.bxslider.min.js', array('jquery'), '', true );
+	wp_enqueue_script( 'bxSliderScript', get_template_directory_uri() . '/js/jquery.bxslider.min.js', array('jquery'), '4.1.2', true );
 	
-	wp_enqueue_script( 'bauru-paineis-script', get_template_directory_uri() . '/js/main.js', array('jquery'), '', true );
+	wp_enqueue_script( 'bauru-paineis-script', get_template_directory_uri() . '/js/main.js', array('jquery', 'bxSliderScript'), '1.0.0', true );
 	
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -155,3 +155,132 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+/**
+ * Register custom post type
+ * 
+ * clientes post type
+ */
+add_action("init", "clientesPostType");
+function clientesPostType() {
+	
+	// Registering new Custom Post Type
+	$labels_post = array( 
+		"name" => "Clientes",
+		"singular_name" => "Cliente",
+		
+	);	
+	$args_post = array(
+		"labels" => $labels_post,
+		"supports" => array("title", "editor", "thumbnail"),
+		"menu_position" => 5,
+		"menu_icon" => "dashicons-format-gallery",
+		"public"	=> true,
+		"publicly_queryable" => true,
+		"show_in_menu"	=> true,
+	);
+	register_post_type("clientes", $args_post);
+	
+	// Registering new Taxonomy
+	$labels_taxonomy = array(
+		"name" => "Categorias de Clientes",
+		"singular_name" => "Categoria de Cliente",
+	);
+	$args_taxonomy = array(
+		"labels"	=> $labels_taxonomy,
+		"show_ui"	=> true,
+		"show_in_menu"	=> true,
+		"show_tagcloud"	=> false,
+		'show_admin_column' => true,
+		"hierarchical"	=> true,
+		"capabilities"	=> array("manage_terms", "edit_terms", "delete_terms", "assign_terms"),
+	);
+	register_taxonomy("cliente-categorias", "clientes", $args_taxonomy);
+	
+}
+
+/**
+ * locais custom post type
+ */
+add_action("init", "locaisPostType");
+function locaisPostType() {
+	
+	// Registering new Custom Post Type
+	$labels_post = array( 
+		"name" => "Locais",
+		"singular_name" => "Local",
+		
+	);	
+	$args_post = array(
+		"labels" => $labels_post,
+		"supports" => array("title", "editor", "thumbnail"),
+		"menu_position" => 6,
+		"menu_icon" => "dashicons-location-alt",
+		"public"	=> true,
+		"publicly_queryable" => true,
+		"show_in_menu"	=> true,
+	);
+	register_post_type("locais", $args_post);
+	
+	// Registering new Taxonomy
+	$labels_taxonomy = array(
+		"name" => "Categorias de Locais",
+		"singular_name" => "Categoria de Local",
+	);
+	$args_taxonomy = array(
+		"labels"	=> $labels_taxonomy,
+		"show_ui"	=> true,
+		"show_in_menu"	=> true,
+		"show_tagcloud"	=> false,
+		'show_admin_column' => true,
+		"hierarchical"	=> true,
+		"capabilities"	=> array("manage_terms", "edit_terms", "delete_terms", "assign_terms"),
+	);
+	register_taxonomy("locais-categorias", "locais", $args_taxonomy);
+	
+}
+
+/**
+ * complementos custom post type
+ */
+add_action("init", "complementosPostType");
+function complementosPostType() {
+	
+	// Registering new Custom Post Type
+	$labels_post = array( 
+		"name" => "Complementos",
+		"singular_name" => "Complemento",
+		
+	);	
+	$args_post = array(
+		"labels" => $labels_post,
+		"supports" => array("title", "editor", "thumbnail"),
+		"menu_position" => 20,
+		"menu_icon" => "dashicons-plus",
+		"public"	=> true,
+		"publicly_queryable" => true,
+		"show_in_menu"	=> true,
+	);
+	register_post_type("complementos", $args_post);
+	
+	// Registering new Taxonomy
+	$labels_taxonomy = array(
+		"name" => "Categorias de Complementos",
+		"singular_name" => "Categoria de Complemento",
+	);
+	$args_taxonomy = array(
+		"labels"	=> $labels_taxonomy,
+		"show_ui"	=> true,
+		"show_in_menu"	=> true,
+		"show_tagcloud"	=> false,
+		'show_admin_column' => true,
+		"hierarchical"	=> true,
+		"capabilities"	=> array("manage_terms", "edit_terms", "delete_terms", "assign_terms"),
+	);
+	register_taxonomy("complementos-categorias", "complementos", $args_taxonomy);
+	
+}
+
+
+
+

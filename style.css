@@ -254,3 +254,536 @@ ul {
 .row {
   padding: 0;
 }
+
+/*-------------------------------------
+5.X Links & Buttons
+-------------------------------------*/
+
+.simple-link:link,
+.simple-link:visited {
+  color: #fff;
+  text-decoration: none;
+}
+
+.simple-link-red:link,
+.simple-link-red:visited,
+.simple-link:hover,
+.simple-link:active {
+  color: #e70514;
+  text-decoration: none;
+}
+
+.simple-link-red:hover,
+.simple-link-red:active {
+  color: #fff;
+}
+
+.btn:link,
+.btn:visited,
+.btn:hover,
+.btn:active {
+  display: inline-block;
+  padding: 12px 18px;
+  border-width: 1px;
+  border-style: solid;
+  margin: 15px 0;
+  text-decoration: none;
+  font-size: 0.9em;
+  text-transform: uppercase;
+}
+
+.btn-red:link,
+.btn-red:visited {
+  color: #e70514;
+  border-color: #e70514;
+  background-color: transparent;
+}
+
+.btn-white:link,
+.btn-white:visited {
+  color: #fff;
+  border-color: #fff;
+  background-color: transparent;
+}
+
+.btn-white.bg-red:link,
+.btn-white.bg-red:visited {
+  border-color: #e70514;
+  background-color: #e70514;
+}
+
+.btn-red:hover,
+.btn-white:hover,
+.btn-white.bg-red:hover,
+.btn-red:active,
+.btn-white:active,
+.btn-white.bg-red:active {
+  color: #e70514;
+  border-color: #fff;
+  background-color: #fff;
+}
+
+/*-------------------------------------
+5.X Banners
+-------------------------------------*/
+
+.banner,
+.banner-text {
+  background-size: cover!important;
+}
+
+.banner {
+  padding: 482px 0 0;
+}
+
+.banner-text {
+  padding: 140px 0 160px;
+}
+
+/*-------------------------------------
+5.X Sections
+-------------------------------------*/
+
+.section-wrapper {
+  padding: 2% 0;
+  background-color: #fff;
+}
+
+.section-title {
+  margin: 0 0 50px;
+  text-align: center;
+  color: #0c4da2;
+  font-size: 2em;
+}
+
+.section-title.closer {
+  margin: 0 0 25px;
+}
+
+/*-------------------------------------
+5.X Fullwidth & Float blocks
+-------------------------------------*/
+
+.fullwidth,
+.out-block,
+.inner-block {
+  display: block;
+  position: relative;
+  z-index: 999;
+  overflow: hidden;
+}
+
+.out-block {
+  width: 100%;
+  float: left;
+}
+
+.out-block.block-02 {
+  width: 50%;
+}
+
+.fullwidth:after,
+.out-block:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.inner-block {
+  width: 50%;
+  height: 480px;
+  float: left;
+}
+
+.inner-block-content {
+  display: block;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  right: 5%;
+  -webkit-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+}
+
+.inner-block-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.inner-block-img img {
+  display: block;
+  width: auto;
+  height: 100%;
+}
+
+/*-------------------------------------
+5.X Header
+-------------------------------------*/
+
+.site-header {
+  display: block;
+  width: 100%;
+  padding: 2% 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  background-color: #fff;
+}
+
+.clear-header {
+  z-index: 9;
+  background-color: #fff;
+}
+
+.main-nav {
+  position: relative;
+}
+
+.main-nav:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.home-link {
+  display: block;
+  padding: 1px;
+  border: 1px solid #0c4da2;
+  float: left;
+}
+
+.home-link img {
+  display: block;
+  width: 160px;
+  height: auto;
+}
+
+.nav-links {
+  display: block;
+  margin: 5px 0 0;
+  float: right;
+  text-align: left;
+}
+
+.nav-links li {
+  display: inline-block;
+  margin-right: 18px;
+}
+
+.nav-links li:last-child {
+  margin-right: 0;
+}
+
+.nav-links li a:link,
+.nav-links li a:visited {
+  display: inline-block;
+  padding: 10px 0;
+  position: relative;
+  overflow: hidden;
+  z-index: 99;
+  color: #0c4da2;
+  font-weight: 500;
+  text-decoration: none;
+  font-size: 0.9em;
+  text-transform: uppercase;
+}
+
+.nav-links li a:after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 3px;
+  background-color: #e70514;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  z-index: 9;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+  -webkit-transform: translate(-50%);
+  transform: translate(-50%);
+}
+
+.nav-links li.current-menu-item a:link:after,
+.nav-links li.current-menu-item a:visited:after,
+.nav-links li a:hover:after,
+.nav-links li a:active:after {
+  width: 100%;
+}
+
+/* Mobile button */
+
+.nav-btn,
+.nav-btn:before,
+.nav-btn:after {
+  display: none;
+  width: 30px;
+  border: 0;
+  position: absolute;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+}
+
+.nav-btn {
+  padding: 8px 0;
+  top: 15px;
+  right: 15px;
+  z-index: 9999;
+  background-color: transparent;
+}
+
+.nav-btn:before {
+  content: '';
+  height: 3px;
+  top: 0;
+  left: 0;
+  z-index: 9;
+  background-color: #0c4da2;
+}
+
+.nav-btn:after {
+  content: '';
+  height: 3px;
+  bottom: 0;
+  left: 0;
+  z-index: 9;
+  background-color: #0c4da2;
+}
+
+.nav-btn:focus {
+  outline: none;
+}
+
+.nav-btn:hover:before,
+.nav-btn:hover:after,
+.nav-btn:hover span {
+  background-color: #e70514;
+}
+
+.nav-btn.active:before {
+  transform: rotate(45deg);
+  top: 10px;
+  left: 1px;
+  background-color: #e70514;
+}
+
+.nav-btn.active:after {
+  transform: rotate(-45deg);
+  bottom: 6px;
+  background-color: #e70514;
+}
+
+.nav-btn span {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: #0c4da2;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+}
+
+.nav-btn.active span {
+  opacity: 0;
+}
+
+/*-------------------------------------
+5.X Footer
+-------------------------------------*/
+
+.site-footer {
+  padding: 2% 0 20px;
+  background-color: #0c4da2;
+}
+
+.footer-nav {
+  border: 0;
+  margin: 0;
+}
+
+.footer-nav ul:after,
+.copy p:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.footer-nav ul li {
+  display: block;
+  width: 50%;
+  margin: 0 0 20px;
+  float: left;
+  text-align: left;
+}
+
+.footer-nav a:link,
+.footer-nav a:visited {
+  display: inline-block;
+  padding: 5px 0;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.1em;
+}
+
+.footer-nav a:hover,
+.footer-nav a:active {
+  color: #e70514;
+}
+
+.footer-content {
+  margin: 0;
+  color: #fff;
+}
+
+.copy {
+  padding: 20px 0 0;
+  border-top: 1px solid #fff;
+  margin: 20px 0 0;
+  color: #fff;
+  font-size: 0.9em;
+}
+
+.copy a:link,
+.copy a:visited {
+  display: block;
+  width: 24px;
+  height: 18px;
+  float: right;
+  overflow: hidden;
+  text-indent: 9999px;
+  background: url(assets/img/logo/logo-delucca.png) no-repeat;
+  background-size: cover;
+  background-position: center bottom;
+}
+
+.copy a:hover,
+.copy a:active {
+  background-position: center top;
+}
+
+/*-------------------------------------
+5.X Queries
+-------------------------------------*/
+
+@media (max-width: 1200px) {
+  
+  /* Header */
+  
+  .home-link {
+    display: inline-block;
+    float: none;
+  }
+  
+  .nav-links {
+    display: none;
+    width: 100%;
+    padding: 30px 0 0;
+    border-top: 1px solid #0c4da2;
+    margin: 30px 0 0;
+    float: none;
+    opacity: 0;
+    text-align: center;
+  }
+  
+  .nav-links li {
+    display: block;
+    margin: 0 0 20px;
+  }
+  
+  .nav-links li a:link,
+  .nav-links li a:visited {
+    font-size: 1.1em;
+  }
+  
+  .nav-btn,
+  .nav-btn:before,
+  .nav-btn:after {
+    display: block;
+  }
+  
+}
+
+@media (max-width: 990px) {
+  
+  /* Footer */
+  
+  .site-footer {
+    padding: 4% 0 20px;
+  }
+  
+  .footer-nav {
+    border-bottom: 1px solid #fff;
+    margin: 0 0 40px;
+  }
+  
+  .footer-nav ul li {
+    width: 90%;
+    margin: 0 auto 20px;
+    float: none;
+    text-align: center;
+  }
+  
+  .footer-content {
+    display: block;
+    width: 260px;
+    margin: 0 auto;
+  }
+  
+  .copy {
+    margin: 40px 0 0;
+  }
+  
+}
+
+@media (max-width: 768px) {
+  
+  /* Links & Buttons */
+  
+  .btn:link,
+  .btn:visited,
+  .btn:hover,
+  .btn:active {
+    padding: 8px 14px;
+    margin: 10px 0;
+  }
+  
+  /* Banners */
+  
+  .banner {
+    padding: 360px 0 0;
+  }
+  
+  .banner-text {
+    padding: 100px 0 120px;
+  }
+  
+  /* Sections */
+  
+  .section-wrapper {
+    padding: 4% 0;
+  }
+  
+  /* Fullwidth & Float blocks */
+  
+  .out-block.block-02 {
+    width: 100%;
+  }
+  
+}
+
+@media (max-width: 460px) {
+  
+  /* Setup */
+  
+  body {
+    font-size: 12px;
+  }
+  
+}

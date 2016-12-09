@@ -33,4 +33,27 @@
   </head>
 
   <body <?php body_class(); ?>>
+    
+    <header class="site-header">
+      <div class="container">
+        <nav class="main-nav">
+          <a class="home-link" href="<?php echo esc_html(home_url('/')); ?>" title="Home"><img src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/logo/logo.png" alt="Bauru Painéis Logo"></a>
+          <?php 
+            // header menu arguments
+            $header_menu_args = array(
+              "theme_location"  => "header",
+              "menu"  => "ul",
+              "menu_class"  => "nav-links",
+              "container" => ""
+            );
+            // call the function to build the menu and with the arguments
+            wp_nav_menu( $header_menu_args );
+          ?>
+          <button id="js-mobile-btn" class="nav-btn" title="Clique para ver o menu">
+            <span></span>
+          </button>
+        </nav>
+      </div>
+    </header>
+    <div class="clear-header"></div>
 	

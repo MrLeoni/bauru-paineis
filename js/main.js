@@ -3,8 +3,9 @@
  */
 
 jQuery(document).ready(function() {
-  
- 
+
+
+
   /*-------------------------------------
   // Navigation functions
   //-----------------------------------*/
@@ -67,15 +68,67 @@ jQuery(document).ready(function() {
   clearElement(jQuery('.site-header'), jQuery('.clear-header'));
   
   
+  
+  /*-------------------------------------
+  // Locals page function
+  //-----------------------------------*/
+  
+  jQuery('.js-btn-trigger').click(function() {
+    
+    //Applying 'active' class only to the cliked button
+    jQuery(this).toggleClass('active');
+    
+    // Remove 'active' class if the button clicked isn't the actual 'active' button
+    jQuery('.js-btn-trigger').not(jQuery(this)).removeClass('active');
+    
+    // Check if the button has class 'active' when its clicked
+    var classCheck = jQuery(this).hasClass('active');
+    
+    // Storing important elements in variables
+    // Get the clicked btn id
+    var btnId = jQuery(this).attr('id');
+    
+    // Using the button id to pick the correspondent '<article>'
+    var element = jQuery('article[data-post="' + btnId + '"]');
+    
+    // Get all <article> with 'local-post-content' class
+    var elementHide = jQuery('.local-post-content');
+    
+    // If btn has 'active' class
+    if (classCheck) {
+      
+      // Hide all 'local-post-content'
+      elementHide.animate({opacity: "0"}, 200, function() {
+        elementHide.slideUp(200);
+      });
+      
+      // Show the correspondent '<article>'
+      setTimeout(function() {
+        element.slideDown(200, function() {
+          element.animate({opacity: "1"}, 200);
+        });
+      }, 500);
+      
+    } else {
+      
+      element.animate({opacity: "0"}, 200, function() {
+        element.slideUp(200);
+      });
+    }
+    
+  });
+
+
+
   /*-------------------------------------
   // Footer functions
   //-----------------------------------*/
-  
+
   // display the current year
   function currentDate() {
     var date = new Date();
     jQuery("#js-date").html(date.getFullYear());
   }
   currentDate();
-  
+
 });

@@ -306,20 +306,25 @@ ul {
   background-color: transparent;
 }
 
+.btn-red:hover,
+.btn-white:hover,
+.btn-red:active,
+.btn-white:active {
+  color: #e70514;
+  border-color: #fff;
+  background-color: #fff;
+}
+
 .btn-white.bg-red:link,
 .btn-white.bg-red:visited {
   border-color: #e70514;
   background-color: #e70514;
 }
 
-.btn-red:hover,
-.btn-white:hover,
 .btn-white.bg-red:hover,
-.btn-red:active,
-.btn-white:active,
 .btn-white.bg-red:active {
   color: #e70514;
-  border-color: #fff;
+  border-color: #e70514;
   background-color: #fff;
 }
 
@@ -337,7 +342,7 @@ ul {
 }
 
 .banner-text {
-  padding: 140px 0 160px;
+  padding: 125px 0 158px;
 }
 
 /*-------------------------------------
@@ -345,8 +350,15 @@ ul {
 -------------------------------------*/
 
 .section-wrapper {
-  padding: 2% 0;
+  padding: 3% 0 5%;
   background-color: #fff;
+}
+
+.section-wrapper h1 {
+  margin: 0 0 40px;
+  color: #0c4da2;
+  font-size: 3em;
+  font-weight: 400;
 }
 
 .section-title {
@@ -421,6 +433,79 @@ ul {
   display: block;
   width: auto;
   height: 100%;
+}
+
+/*-------------------------------------
+5.X Forms
+-------------------------------------*/
+
+.form-box {
+  margin: 0 0 10px;
+}
+
+.form-box label,
+.form-info {
+  display: block;
+  color: #0b4da3;
+  font-size: 1.1em;
+}
+
+.form-info {
+  padding: 10px 0 0;
+}
+
+.input-default {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #0b4da3;
+  background-color: transparent;
+}
+
+.input-default:focus {
+  outline: none;
+  border-color: #e70514;
+}
+
+.input-default.submit {
+  background-color: #0b4da3;
+  color: #fff;
+  font-weight: bold;
+  -webkit-transition: 0.2s ease-out;
+  transition: 0.2s ease-out;
+}
+
+.input-default.submit:hover,
+.input-default.submit:focus,
+.input-default.submit:active {
+  border-color: #e70514;
+  background-color: #e70514;
+}
+
+/*-------------------------------------
+5.X Default Pages
+-------------------------------------*/
+
+.section-wrapper .page-content h1{
+  max-width: 420px;
+  margin: 0 auto 40px;
+  text-align: center;
+  font-size: 2.2em;
+}
+
+.page-content {
+  padding: 0 5%;
+  font-size: 1.2em;
+}
+
+.page-content .alignleft {
+  margin-right: 3.5em;
+}
+
+.page-content .simple-link-red:hover,
+.page-content .simple-link-red:visited {
+  color: #e70514;
+  text-decoration: underline;
 }
 
 /*-------------------------------------
@@ -595,6 +680,182 @@ ul {
 }
 
 /*-------------------------------------
+5.X Home
+-------------------------------------*/
+
+.banner-text h1 {
+  max-width: 380px;
+  color: #fff;
+  font-size: 3.2em;
+  font-weight: 400;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.7);
+}
+
+/*-------------------------------------
+5.X About
+-------------------------------------*/
+
+.about-img img {
+  display: block;
+  width: 70%;
+  height: auto;
+  margin: 30% auto 0;
+}
+
+.about {
+  line-height: 22px;
+}
+
+/*-------------------------------------
+5.X Portfolio
+-------------------------------------*/
+
+/*-------------------------------------
+5.X Clients
+-------------------------------------*/
+
+/*-------------------------------------
+5.X Midias
+-------------------------------------*/
+
+/*-------------------------------------
+5.X Locals
+-------------------------------------*/
+
+.locals h1 {
+  max-width: 540px;
+  margin: 0 auto 40px;
+  font-size: 2em;
+}
+
+.locals-wrapper {
+  max-width: 750px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.locals-category {
+  margin: 0 0 60px;
+}
+
+.locals-category h2,
+.locals-category h3 {
+  font-size: 1.2em;
+}
+
+.locals-category h2 {
+  padding: 2% 0;
+  color: #0c4da2;
+  border: 1px solid #0c4da2;
+}
+
+.local-post-trigger {
+  display: block;
+  width: 100%;
+  padding: 2% 0;
+  border: 0;
+  border-bottom: 1px solid #fff;
+  background-color: #0c4da2;
+  -webkit-transition: 0.2s ease-out;
+  transition: 0.2s ease-out;
+}
+
+.local-post-trigger:hover,
+.local-post-trigger:active,
+.local-post-trigger.active {
+  outline: none;
+  background-color: #0c69e4;
+}
+
+.locals-category h3 {
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+  font-weight: 400;
+}
+
+.title-icon {
+  position: absolute;
+  top: 45%;
+  right: 22px;
+  -webkit-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  -webkit-transition: 0.2s ease-out;
+  transition: 0.2s ease-out;
+  color: #0c69e4;
+  font-size: 1.4em;
+}
+
+.local-post-trigger:hover .title-icon {
+  color: #0c4da2;
+}
+
+.local-post-trigger:active .title-icon,
+.local-post-trigger.active .title-icon {
+  color: #0c4da2;
+  transform: translate(0, -50%) rotate(180deg);
+}
+
+.local-post-content {
+  display: none;
+  padding: 40px;
+  margin: 0 0 30px;
+  opacity: 0;
+  background-color: #e9ebed;
+  color: #0c4da2;
+}
+
+.local-post-content img {
+  display: block;
+  max-width: 95%;
+  height: auto;
+  margin: 0 auto;
+}
+
+/*-------------------------------------
+5.X Resp & Ambiental
+-------------------------------------*/
+
+/*-------------------------------------
+5.X Contact
+-------------------------------------*/
+
+#contact.section-wrapper {
+  padding: 0;
+}
+
+#contact.section-wrapper:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.contact,
+.map-contact {
+  display: block;
+  width: 50%;
+  float: left;
+}
+
+.contact .simple-link-red:hover,
+.contact .simple-link-red:visited {
+  color: #e70514;
+  text-decoration: underline;
+}
+
+.contact {
+  padding: 2% 5% 0 17%;
+  color: #bcbaba;
+}
+
+.map-contact iframe {
+  display: block;
+  width: 100%;
+  height: 800px;
+  border: 0;
+}
+
+/*-------------------------------------
 5.X Footer
 -------------------------------------*/
 
@@ -708,9 +969,33 @@ ul {
     display: block;
   }
   
+  /* Contact */
+  
+  .contact {
+    padding: 2% 5% 0;
+  }
+  
 }
 
 @media (max-width: 990px) {
+  
+  /* Banners */
+  
+  .banner {
+    padding: 280px 0 0;
+  }
+  
+  /* Contact */
+  
+  .contact,
+  .map-contact {
+    width: 100%;
+    float: none;
+  }
+  
+  .map-contact iframe {
+    height: 300px;
+  }
   
   /* Footer */
   
@@ -754,12 +1039,6 @@ ul {
     margin: 10px 0;
   }
   
-  /* Banners */
-  
-  .banner {
-    padding: 360px 0 0;
-  }
-  
   .banner-text {
     padding: 100px 0 120px;
   }
@@ -784,6 +1063,23 @@ ul {
   
   body {
     font-size: 12px;
+  }
+  
+  /* Home */
+  
+  .banner-text h1 {
+    max-width: 100%;
+  }
+  
+  /* Locals */
+  
+  .locals-category h2,
+  .local-post-trigger {
+    padding: 5% 0;
+  }
+  
+  .local-post-content {
+    padding: 20px;
   }
   
 }

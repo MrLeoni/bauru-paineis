@@ -114,6 +114,8 @@ function bauru_paineis_scripts() {
 	
 	wp_enqueue_style( 'bxSliderStyle', get_template_directory_uri() . '/assets/css/jquery.bxslider.css' );
 	
+	wp_enqueue_style( 'magnific-popup-css', get_template_directory_uri() . '/assets/css/magnific-popup.css' );
+	
 	// Scripts
 	
 	wp_enqueue_script( 'bauru-paineis-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
@@ -122,7 +124,9 @@ function bauru_paineis_scripts() {
 	
 	wp_enqueue_script( 'bxSliderScript', get_template_directory_uri() . '/js/jquery.bxslider.min.js', array('jquery'), '4.1.2', true );
 	
-	wp_enqueue_script( 'bauru-paineis-script', get_template_directory_uri() . '/js/main.js', array('jquery', 'bxSliderScript'), '1.0.0', true );
+	wp_enqueue_script( 'magnific-popup-script', get_template_directory_uri() . '/js/jquery.magnific-popup.min.js', array('jquery'), '1.1.0', true );
+	
+	wp_enqueue_script( 'bauru-paineis-script', get_template_directory_uri() . '/js/main.js', array('jquery', 'bxSliderScript', 'magnific-popup-script'), '1.0.0', true );
 	
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

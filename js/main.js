@@ -91,8 +91,8 @@ jQuery(document).ready(function() {
     // Using the button id to pick the correspondent '<article>'
     var element = jQuery('article[data-post="' + btnId + '"]');
     
-    // Get all <article> with 'local-post-content' class
-    var elementHide = jQuery('.local-post-content');
+    // Get all <article> except the 'element'
+    var elementHide = jQuery('.local-post-content').not(jQuery(element));
     
     // If btn has 'active' class
     if (classCheck) {
@@ -103,11 +103,9 @@ jQuery(document).ready(function() {
       });
       
       // Show the correspondent '<article>'
-      setTimeout(function() {
-        element.slideDown(200, function() {
-          element.animate({opacity: "1"}, 200);
-        });
-      }, 500);
+      element.slideDown(200, function() {
+        element.animate({opacity: "1"}, 200);
+      });
       
     } else {
       
@@ -116,6 +114,20 @@ jQuery(document).ready(function() {
       });
     }
     
+  });
+  
+  
+  
+   /*-------------------------------------
+  // Locals page function
+  //-----------------------------------*/
+  
+  jQuery('.blog-gallery').magnificPopup({
+    delegate: 'a',
+    type: 'image',
+    gallery: {
+      enabled: true
+    }
   });
 
 

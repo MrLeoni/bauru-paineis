@@ -707,8 +707,56 @@ ul {
 }
 
 /*-------------------------------------
-5.X Portfolio
+5.X Blog
 -------------------------------------*/
+
+.section-wrapper .blog-title h1 {
+  text-align: center;
+  font-size: 2.4em;
+}
+
+.blog-gallery:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.blog-gallery a {
+  display: block;
+  width: 23%;
+  height: auto;
+  margin: 0 1.0019% 1.0019% 0;
+  float: left;
+}
+
+.blog-gallery a:last-child {
+  margin-right: 0;
+}
+
+.blog-gallery img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0;
+}
+
+.blog-text {
+  margin: 40px 0 0;
+  color: #0c4da2;
+}
+
+.bg-blue:link,
+.bg-blue:visited {
+  color: #fff;
+  border-color: #0c4da2;
+  background-color: #0c4da2;
+}
+
+.bg-blue:hover,
+.bg-blue:active {
+  border-color: #e70514;
+  background-color: #e70514;
+}
 
 /*-------------------------------------
 5.X Clients
@@ -816,6 +864,90 @@ ul {
 5.X Resp & Ambiental
 -------------------------------------*/
 
+#responsability.section-wrapper {
+  padding-bottom: 0;
+  overflow: hidden;
+}
+
+#responsability.section-wrapper h1,
+#responsability.section-wrapper h2 {
+  font-size: 2em;
+  font-weight: 400;
+}
+
+.even article:nth-child(even) {
+  background-color: #0c4da2;
+  color: #fff;
+}
+
+.even article:nth-child(3) {
+  position: relative;
+  z-index: 999;
+  background-color: #fff;
+}
+
+.even article:nth-child(4) {
+  z-index: 9999;
+}
+
+.even article:last-child {
+  border-bottom: 0;
+}
+
+.content-container {
+  width: 100%;
+  position: relative;
+}
+
+.content-container:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.content-container .content-box:first-child {
+  padding-left: 20%;
+}
+
+.content-container .content-box:last-child {
+  padding-right: 20%;
+}
+
+.content-box {
+  width: 50%;
+  float: left;
+}
+
+.even article:nth-child(even) h1 {
+  color: #fff;
+}
+
+.even article:nth-child(odd) .content-box:first-child {
+  padding-left: 5%;
+  position: relative;
+  top: 5px;
+  left: 0;
+  z-index: 99;
+}
+
+.even article:nth-child(odd) .content-box:last-child {
+  padding-left: 5%;
+  margin-top: 5%;
+  position: relative;
+  z-index: 999;
+}
+
+.even article:nth-child(even) .content-box:first-child {
+  margin: 100px 0 50px;
+}
+
+.even article:nth-child(even) .content-box:last-child {
+  position: absolute;
+  top: -5%;
+  right: -5%;
+  z-index: 99;
+}
+
 /*-------------------------------------
 5.X Contact
 -------------------------------------*/
@@ -878,8 +1010,8 @@ ul {
 
 .footer-nav ul li {
   display: block;
-  width: 50%;
-  margin: 0 0 20px;
+  width: 42%;
+  margin: 0 0 10px;
   float: left;
   text-align: left;
 }
@@ -933,6 +1065,30 @@ ul {
 5.X Queries
 -------------------------------------*/
 
+@media (max-width: 1440px) {
+  
+  /* Resp & Ambiental */
+  
+  .even article:nth-child(odd) .content-box:first-child {
+    left: -6%;
+  }
+  
+}
+
+@media (max-width: 1280px) {
+  
+  /* Resp & Ambiental */
+  
+  .even article:nth-child(odd) .content-box:first-child {
+    left: -13%;
+  }
+  
+  .even article:nth-child(even) .content-box:last-child {
+    top: -2%;
+  }
+  
+}
+
 @media (max-width: 1200px) {
   
   /* Header */
@@ -969,6 +1125,28 @@ ul {
     display: block;
   }
   
+  /* Resp & Ambiental */
+  
+  .content-container .content-box:first-child {
+    padding-left: 12%;
+  }
+  
+  .even article:nth-child(even) .content-box:first-child {
+    margin: 20px 0 20px;
+  }
+  
+  .even article:nth-child(odd) .content-box:first-child {
+    left: -25%;
+  }
+  
+  .even article:nth-child(odd) .content-box:last-child {
+    padding-left: 10%;
+  }
+  
+  .content-container .content-box:last-child {
+    padding-right: 5%;
+  }
+  
   /* Contact */
   
   .contact {
@@ -983,6 +1161,36 @@ ul {
   
   .banner {
     padding: 280px 0 0;
+  }
+  
+  /* Sections */
+  
+  .section-wrapper h1 {
+    margin: 0 0 20px;
+  }
+  
+  /* Blog */
+  
+  .blog-gallery a {
+    width: 49%;
+    margin: 0 1% 1% 0;
+  }
+  
+  /* Resp & Ambiental */
+  
+  .even article:last-child {
+    border-bottom: 1px solid #fff;
+  }
+  
+  .content-box {
+    width: 80%;
+    float: none;
+  }
+  
+  .even article:nth-child(even) .content-box:first-child,
+  .even article:nth-child(odd) .content-box:last-child {
+    margin: 0 auto;
+    padding: 50px 0;
   }
   
   /* Contact */

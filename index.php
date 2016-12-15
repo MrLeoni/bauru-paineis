@@ -13,30 +13,17 @@
  */
 
 get_header(); ?>
-
+  
+  <section class="banner-text" style="background: url(wp-content/themes/bauru-paineis/assets/img/background/home-banner.jpg) no-repeat center 10%">
+    <div class="container">
+      <h1>Quem não é visto não é lembrado</h1>
+      <a class="btn btn-white bg-red" href="#" title="Conheça nossa empresa">Conheça nossa empresa</a>
+    </div>
+  </section>
 	
-	<main id="main" class="site-main" role="main">
-
-  	<?php
-  	if ( have_posts() ) :
-  
-  		/* Start the Loop */
-  		while ( have_posts() ) : the_post();
-  		
-  			get_template_part( 'template-parts/content', get_post_format() );
-  
-  		endwhile;
-  
-  		the_posts_navigation();
-  
-  	else :
-  
-  		get_template_part( 'template-parts/content', 'none' );
-  
-  	endif; ?>
-
-	</main><!-- #main -->
-	
+  <main id="main" class="site-main" role="main">
+      <?php get_template_part( 'template-parts/content', 'blog' ); ?>
+  </main><!-- #main -->
 
 <?php
 get_footer();

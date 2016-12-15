@@ -10,14 +10,14 @@ $thumb_id = get_post_thumbnail_id();
 $thumb_url = wp_get_attachment_image_src($thumb_id, "full", true);
 
 // Get ACF Fields
-$text_01 = get_field('resp-text-01');
-$img_01 = get_field('resp-img-01');
-$text_02 = get_field('resp-text-02');
-$img_02 = get_field('resp-img-02');
-$text_03 = get_field('resp-text-03');
-$img_03 = get_field('resp-img-03');
-$text_04 = get_field('resp-text-04');
-$img_04 = get_field('resp-img-04');
+$text_01 = get_field('block-text-01');
+$img_01 = get_field('block-img-01');
+$text_02 = get_field('block-text-02');
+$img_02 = get_field('block-img-02');
+$text_03 = get_field('block-text-03');
+$img_03 = get_field('block-img-03');
+$text_04 = get_field('block-text-04');
+$img_04 = get_field('block-img-04');
 
 get_header(); ?>
 

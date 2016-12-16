@@ -3,7 +3,7 @@ Theme Name: Bauru Painéis
 Theme URI: http://underscores.me/
 Author: Agência Delucca
 Author URI: http://agenciadelucca.com.br/
-Description: Tema em WordPress feito especialmente para a empresa Bauru Painéis.
+Description: Tema em WordPress feito exclusivamente para a empresa Bauru Painéis.
 Version: 1.0.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -29,6 +29,22 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 
 5.0 Author CSS
   5.1 Setup
+  5.2 Link & Buttons
+  5.3 Banners
+  5.4 Sections
+  5.5 Forms
+  5.6 Default Pages
+  5.7 Header
+  5.8 Home
+  5.9 About
+  5.10 Blog
+  5.11 Midia
+  5.12 Locals
+  5.13 Resp & Ambiental
+  5.14 Contact
+  5.15 Footer
+  5.16 404 Page
+  5.17 Queries
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
 1.0 Navigation
@@ -329,7 +345,7 @@ ul {
 }
 
 /*-------------------------------------
-5.X Banners
+5.3 Banners
 -------------------------------------*/
 
 .banner,
@@ -346,7 +362,7 @@ ul {
 }
 
 /*-------------------------------------
-5.X Sections
+5.4 Sections
 -------------------------------------*/
 
 .section-wrapper {
@@ -373,70 +389,7 @@ ul {
 }
 
 /*-------------------------------------
-5.X Fullwidth & Float blocks
--------------------------------------*/
-
-.fullwidth,
-.out-block,
-.inner-block {
-  display: block;
-  position: relative;
-  z-index: 999;
-  overflow: hidden;
-}
-
-.out-block {
-  width: 100%;
-  float: left;
-}
-
-.out-block.block-02 {
-  width: 50%;
-}
-
-.fullwidth:after,
-.out-block:after {
-  content: '';
-  display: table;
-  clear: both;
-}
-
-.inner-block {
-  width: 50%;
-  height: 480px;
-  float: left;
-}
-
-.inner-block-content {
-  display: block;
-  width: 100%;
-  position: absolute;
-  top: 50%;
-  left: 5%;
-  right: 5%;
-  -webkit-transform: translate(0, -50%);
-  transform: translate(0, -50%);
-}
-
-.inner-block-img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-}
-
-.inner-block-img img {
-  display: block;
-  width: auto;
-  height: 100%;
-}
-
-/*-------------------------------------
-5.X Forms
+5.5 Forms
 -------------------------------------*/
 
 .form-box {
@@ -483,7 +436,7 @@ ul {
 }
 
 /*-------------------------------------
-5.X Default Pages
+5.6 Default Pages
 -------------------------------------*/
 
 .section-wrapper .page-content h1{
@@ -509,7 +462,7 @@ ul {
 }
 
 /*-------------------------------------
-5.X Header
+5.7 Header
 -------------------------------------*/
 
 .site-header {
@@ -519,7 +472,7 @@ ul {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 99;
+  z-index: 9999;
   background-color: #fff;
 }
 
@@ -654,14 +607,16 @@ ul {
 }
 
 .nav-btn.active:before {
-  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
   top: 10px;
   left: 1px;
   background-color: #e70514;
 }
 
 .nav-btn.active:after {
-  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
   bottom: 6px;
   background-color: #e70514;
 }
@@ -680,7 +635,7 @@ ul {
 }
 
 /*-------------------------------------
-5.X Home
+5.8 Home
 -------------------------------------*/
 
 .banner-text h1 {
@@ -735,8 +690,111 @@ ul {
   right: 0;
 }
 
+.resume-wrapper:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.banner-resume {
+  width: 33.3333%;
+  height: 335px;
+  padding: 3%;
+  float: left;
+  overflow: hidden;
+  background-size: cover!important;
+  color: #fff;
+  text-align: center;
+  font-size: 1.2em;
+}
+
+.banner-resume h2 {
+  margin: 0 0 5%;
+}
+
+.banner-resume .btn.btn-white {
+  font-size: 0.8em;
+}
+
+.banner-resume .btn-white:hover,
+.banner-resume .btn-white:active {
+  color: #e70514;
+  border-color: #fff;
+  background-color: #fff;
+}
+
+.banner-text.parallax {
+  padding: 125px;
+  background-attachment: fixed!important;
+  text-align: center;
+  color: #fff;
+}
+
+.banner-text.parallax h3 {
+  max-width: 390px;
+  margin: 0 auto;
+  font-size: 2em;
+}
+
+#home-clients {
+  text-align: center;
+}
+
+#home-clients h2 {
+  color: #0c4da2;
+  font-size: 2.2em;
+  font-weight: 400;
+}
+
+.clients-wrapper {
+  margin: 40px 0 0;
+}
+
+.clients-wrapper .bx-wrapper .bx-viewport {
+  box-shadow: none;
+  border: 0;
+  left: 0;
+  background: transparent;
+}
+
+.clients-wrapper .bx-wrapper .bx-prev {
+  left: -50px;
+}
+
+.clients-wrapper .bx-wrapper .bx-next {
+  right: -50px;
+}
+
+.clients-wrapper .bx-wrapper img {
+  height: auto;
+}
+
+#news h2 {
+  margin: 0 0 15px;
+  color: #0c4da2;
+}
+
+.widget h2 {
+  display: none;
+}
+
+#news .input-default.news {
+  margin: 15px 0 0;
+  width: 65%;
+  float: left;
+}
+
+#news .submit.news {
+  width: 30%;
+  margin: 15px 0 0;
+  float: right;
+  text-transform: uppercase;
+  font-size: 1em;
+  font-weight: 500;
+}
+
 /*-------------------------------------
-5.X About
+5.9 About
 -------------------------------------*/
 
 .about-img img {
@@ -751,7 +809,7 @@ ul {
 }
 
 /*-------------------------------------
-5.X Blog
+5.10 Blog
 -------------------------------------*/
 
 .section-wrapper .blog-title h1 {
@@ -852,7 +910,7 @@ ul {
 }
 
 /*-------------------------------------
-5.X Midia
+5.11 Midia
 -------------------------------------*/
 
 #midia.section-wrapper {
@@ -963,7 +1021,7 @@ ul {
 }
 
 /*-------------------------------------
-5.X Locals
+5.12 Locals
 -------------------------------------*/
 
 .locals h1 {
@@ -1037,7 +1095,8 @@ ul {
 .local-post-trigger:active .title-icon,
 .local-post-trigger.active .title-icon {
   color: #0c4da2;
-  transform: translate(0, -50%) rotate(180deg);
+  -webkit-transform: translate(0, -50%) rotate(180deg);
+          transform: translate(0, -50%) rotate(180deg);
 }
 
 .local-post-content {
@@ -1057,7 +1116,7 @@ ul {
 }
 
 /*-------------------------------------
-5.X Resp & Ambiental
+5.13 Resp & Ambiental
 -------------------------------------*/
 
 #responsability.section-wrapper {
@@ -1067,6 +1126,7 @@ ul {
 
 #responsability.section-wrapper h1,
 #responsability.section-wrapper h2 {
+  margin: 0 0 25px;
   font-size: 2em;
   font-weight: 400;
 }
@@ -1114,10 +1174,6 @@ ul {
   float: left;
 }
 
-.even article:nth-child(even) h1 {
-  color: #fff;
-}
-
 .even article:nth-child(odd) .content-box:first-child {
   padding-left: 5%;
   position: relative;
@@ -1145,7 +1201,7 @@ ul {
 }
 
 /*-------------------------------------
-5.X Contact
+5.14 Contact
 -------------------------------------*/
 
 #contact.section-wrapper {
@@ -1173,7 +1229,7 @@ ul {
 
 .contact {
   padding: 2% 5% 0 17%;
-  color: #bcbaba;
+  color: #737373;
 }
 
 .map-contact iframe {
@@ -1184,7 +1240,7 @@ ul {
 }
 
 /*-------------------------------------
-5.X Footer
+5.15 Footer
 -------------------------------------*/
 
 .site-footer {
@@ -1258,7 +1314,7 @@ ul {
 }
 
 /*-------------------------------------
-5.X 404
+5.16 404
 -------------------------------------*/
 
 .not-found.section-wrapper {
@@ -1269,7 +1325,7 @@ ul {
 }
 
 /*-------------------------------------
-5.X Queries
+5.17 Queries
 -------------------------------------*/
 
 @media (max-width: 1440px) {
@@ -1374,6 +1430,21 @@ ul {
   
   .section-wrapper h1 {
     margin: 0 0 20px;
+  }
+  
+  /* Home */
+  
+  .banner-resume,
+  .banner-resume .btn.btn-white {
+    font-size: 1em;
+  }
+  
+  .clients-wrapper .bx-wrapper .bx-prev {
+    left: 10px;
+  }
+  
+  .clients-wrapper .bx-wrapper .bx-next {
+    right: 10px;
   }
   
   /* Blog */
@@ -1481,10 +1552,21 @@ ul {
     padding: 4% 0;
   }
   
-  /* Fullwidth & Float blocks */
+  /* Home */
   
-  .out-block.block-02 {
+  #home .content-position {
     width: 100%;
+  }
+  
+  .banner-resume {
+    width: 100%;
+    height: auto;
+    padding: 5%;
+  }
+  
+  .banner-text.parallax {
+    padding: 125px 0;
+    background-attachment: scroll!important;
   }
   
   /* Midia */

@@ -29,6 +29,12 @@ Its a theme for __content__ administration, therefore the capabillity for change
 
 ## Versions:
 
+### 1.0.0 - 16/12/2016
+* Theme released!
+
+<br>
+<br>
+
 ### 0.0.0 - 06/12/2016
 * First Commit!
 

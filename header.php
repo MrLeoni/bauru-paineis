@@ -13,7 +13,7 @@
 <html <?php language_attributes(); ?>>
   <head>
     <meta charset="<?php bloginfo( 'charset' ); ?>">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <link rel="profile" href="http://gmpg.org/xfn/11">
     <!-- favicon -->
     <link href="<?php bloginfo('stylesheet_directory'); ?>/assets/img/logo/favicon_16.png" rel="icon" size="16x16">

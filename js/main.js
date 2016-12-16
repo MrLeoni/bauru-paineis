@@ -70,6 +70,34 @@ jQuery(document).ready(function() {
   
   
   /*-------------------------------------
+  // Blog page function
+  //-----------------------------------*/
+  
+  var margin = function(screen) {
+    
+    var result;
+    
+    if (screen.width() < 460) {
+      return result = 10;
+    } else {
+      return result = 60;
+    }
+    
+  }
+  
+  jQuery('.clients-slider').bxSlider({
+    pager: false,
+    speed: 600,
+    slideWidth: 150,
+    minSlides: 2,
+    maxSlides: 5,
+    moveSlides: 1,
+    slideMargin: margin(jQuery(window)),
+  });
+  
+  
+  
+  /*-------------------------------------
   // Locals page function
   //-----------------------------------*/
   
@@ -119,7 +147,7 @@ jQuery(document).ready(function() {
   
   
    /*-------------------------------------
-  // Locals page function
+  // Blog page function
   //-----------------------------------*/
   
   jQuery('.blog-gallery').magnificPopup({

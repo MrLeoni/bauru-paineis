@@ -6,7 +6,11 @@ $post_type = get_field('post-type');
 // Creating a post query
 
 if( is_front_page()) {
-  $post_query = new WP_Query(array( "post_type" => "$post_type", 'posts_per_page' => 12 ));
+  $post_query = new WP_Query(array( 
+    "post_type" => "$post_type",
+    'posts_per_page' => 12,
+    'orderby' => 'rand'
+  ));
 } else {
   $post_query = new WP_Query(array( "post_type" => "$post_type" ));
 }

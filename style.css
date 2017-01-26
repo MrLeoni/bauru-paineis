@@ -4,7 +4,7 @@ Theme URI: http://underscores.me/
 Author: Agência Delucca
 Author URI: http://agenciadelucca.com.br/
 Description: Tema em WordPress feito exclusivamente para a empresa Bauru Painéis.
-Version: 1.0.0
+Version: 1.1.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: bauru-paineis
@@ -230,8 +230,20 @@ object {
 5.1 Setup
 -------------------------------------*/
 
+@font-face {
+  font-family: carnac-bold;
+  src: url(assets/fonts/carnac-bold.ttf);
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: carnac-regular;
+  src: url(assets/fonts/carnac-regular.ttf);
+  font-weight: normal;
+}
+
 body {
-  font-family: "Raleway", sans-serif;
+  font-family: "carnac-regular", "Raleway", sans-serif;
   font-size: 14px;
   font-weight: 400;
   background-color: #ccc;
@@ -494,7 +506,7 @@ ul {
 .home-link {
   display: block;
   padding: 1px;
-  border: 1px solid #0c4da2;
+  box-shadow: 1px 1px 5px #aaa;
   float: left;
 }
 
@@ -642,14 +654,19 @@ ul {
   max-width: 380px;
   color: #fff;
   font-size: 3.2em;
-  font-weight: 400;
+  font-family: "carnac-bold", "Raleway", sans-serif;
+  font-weight: bold;
   text-shadow: 0 2px 6px rgba(0,0,0,0.7);
 }
 
 #home-content.section-wrapper h2 {
   color: #0c4da2;
   font-size: 1.8em;
-  font-weight: 400;
+  font-weight: normal;
+}
+
+#home-midia-local.section-wrapper {
+  padding-top: 0;
 }
 
 #home .midia-container {
@@ -657,26 +674,21 @@ ul {
   float: none;
 }
 
-#home .midia-container:nth-child(1) {
+#home .midia-container .midia-content:first-child {
   background-color: #0c4da2;
 }
 
-#home .midia-container:nth-child(2) {
+
+#home .midia-container .midia-content:last-child {
   background-color: #ed1c24;
 }
 
-#home .midia-content,
-#home .midia-img {
+#home .midia-content {
   height: 385px;
 }
 
 #home .content-position {
   width: 50%;
-}
-
-#home .midia-img img {
-  top: 49.9%;
-  left: 40%;
 }
 
 #home .midia-container:nth-child(1) .midia-img:before {
@@ -743,7 +755,7 @@ ul {
 #home-clients h2 {
   color: #0c4da2;
   font-size: 2.2em;
-  font-weight: 400;
+  font-weight: normal;
 }
 
 .clients-wrapper {
@@ -790,7 +802,8 @@ ul {
   float: right;
   text-transform: uppercase;
   font-size: 1em;
-  font-weight: 500;
+  font-family: "carnac-bold", "Raleway", sans-serif;
+  font-weight: bold;
 }
 
 /*-------------------------------------
@@ -1031,13 +1044,18 @@ ul {
 }
 
 .locals-wrapper {
-  max-width: 750px;
+  max-width: 1050px;
   margin: 0 auto;
   text-align: center;
 }
 
 .locals-category {
-  margin: 0 0 60px;
+  border: 1px solid #0c4da2;
+  border-bottom-width: 0;
+}
+
+.locals-wrapper .locals-category:last-child {
+  border-bottom-width: 1px;
 }
 
 .locals-category h2,
@@ -1048,13 +1066,25 @@ ul {
 .locals-category h2 {
   padding: 2% 0;
   color: #0c4da2;
-  border: 1px solid #0c4da2;
+  position: relative;
+}
+
+.locals-category h2:hover {
+  cursor: pointer;
+}
+
+.locals-category section {
+  display: none;
+}
+
+.local-post:last-child .local-post-trigger {
+  border-bottom-width: 0;
 }
 
 .local-post-trigger {
   display: block;
   width: 100%;
-  padding: 2% 0;
+  padding: 1% 0;
   border: 0;
   border-bottom: 1px solid #fff;
   background-color: #0c4da2;
@@ -1062,10 +1092,22 @@ ul {
   transition: 0.2s ease-out;
 }
 
-.local-post-trigger:hover,
+.local-post-trigger:hover {
+  background-color: #0c69e4;
+}
+
+.local-post-trigger:hover .title-icon,
+.local-post-trigger:focus .title-icon {
+  color: #0c4da2;
+}
+
+.local-post-trigger:focus {
+  background-color: #0c69e4;
+  outline: none;
+}
+
 .local-post-trigger:active,
 .local-post-trigger.active {
-  outline: none;
   background-color: #0c69e4;
 }
 
@@ -1073,7 +1115,7 @@ ul {
   position: relative;
   overflow: hidden;
   color: #fff;
-  font-weight: 400;
+  font-weight: normal;
 }
 
 .title-icon {
@@ -1082,37 +1124,25 @@ ul {
   right: 22px;
   -webkit-transform: translate(0, -50%);
   transform: translate(0, -50%);
-  -webkit-transition: 0.2s ease-out;
-  transition: 0.2s ease-out;
   color: #0c69e4;
   font-size: 1.4em;
 }
 
-.local-post-trigger:hover .title-icon {
-  color: #0c4da2;
-}
-
-.local-post-trigger:active .title-icon,
-.local-post-trigger.active .title-icon {
-  color: #0c4da2;
-  -webkit-transform: translate(0, -50%) rotate(180deg);
-          transform: translate(0, -50%) rotate(180deg);
+.locals-wrapper .local-post-content {
+  text-align: left;
 }
 
 .local-post-content {
   display: none;
-  padding: 40px;
-  margin: 0 0 30px;
-  opacity: 0;
+  padding: 20px;
   background-color: #e9ebed;
   color: #0c4da2;
 }
 
-.local-post-content img {
-  display: block;
-  max-width: 95%;
-  height: auto;
-  margin: 0 auto;
+.local-post-content:after {
+  content: '';
+  display: table;
+  clear: both;
 }
 
 /*-------------------------------------
@@ -1128,7 +1158,7 @@ ul {
 #responsability.section-wrapper h2 {
   margin: 0 0 25px;
   font-size: 2em;
-  font-weight: 400;
+  font-weight: normal;
 }
 
 .even article:nth-child(even) {
@@ -1569,6 +1599,15 @@ ul {
     background-attachment: scroll!important;
   }
   
+  /* Locals */
+  
+  .local-post-content img {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0 auto 15px;
+  }
+  
   /* Midia */
   
   .midia-info img{
@@ -1612,10 +1651,6 @@ ul {
   .locals-category h2,
   .local-post-trigger {
     padding: 5% 0;
-  }
-  
-  .local-post-content {
-    padding: 20px;
   }
   
   /* Midia */

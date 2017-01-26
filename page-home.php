@@ -25,11 +25,17 @@ $resume_text_02 = get_field('block-text-02');
 $resume_bg_03 = get_field('block-img-03');
 $resume_text_03 = get_field('block-text-03');
 
+// Home content
+$home_text_01 = get_field('home-text-01');
+$home_img_01 = get_field('home-img-01');
+$home_text_02 = get_field('home-text-02');
+$home_img_02 = get_field('home-img-02');
+$home_text_03 = get_field('home-text-03');
+$home_img_03 = get_field('home-img-03');
+
 // Midia and Local
 $home_local_text = get_field('home-local-text');
-$home_local_img = get_field('home-local-img');
 $home_midia_text = get_field('home-midia-text');
-$home_midia_img = get_field('home-midia-img');
 
 // Parallax
 $parallax_text = get_field('parallax-text');
@@ -75,7 +81,7 @@ get_header(); ?>
         ?>
       </section>
       
-      <section id="home-resume" class="resume-wrapper">
+      <section id="home-content" class="resume-wrapper">
         <div class="banner-resume" style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(<?php echo $resume_bg_01['url']; ?>) no-repeat center">
           <div class="text-resume">
             <?php echo $resume_text_01; ?>
@@ -95,6 +101,24 @@ get_header(); ?>
       
       <?php get_template_part( 'template-parts/content', 'blog' ); ?>
       
+      <section id="home-resume-02" class="resume-wrapper">
+        <div class="banner-resume" style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(<?php echo $home_img_01['url']; ?>) no-repeat center">
+          <div class="text-resume">
+            <?php echo $home_text_01; ?>
+          </div>
+        </div>
+        <div class="banner-resume" style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(<?php echo $home_img_02['url']; ?>) no-repeat center">
+          <div class="text-resume">
+            <?php echo $home_text_02; ?>
+          </div>
+        </div>
+        <div class="banner-resume" style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(<?php echo $home_img_03['url']; ?>) no-repeat center">
+          <div class="text-resume">
+            <?php echo $home_text_03; ?>
+          </div>
+        </div>
+      </section>
+      
       <section id="home-midia-local" class="section-wrapper">
         <div class="midias-wrapper">
         
@@ -103,15 +127,6 @@ get_header(); ?>
               <div class="content-position">
                 <?php echo $home_local_text; ?>
               </div>
-            </div>
-            <div class="midia-img">
-              <img src="<?php echo $home_local_img['url']; ?>" alt="<?php echo $home_local_img['alt']; ?>">
-            </div>
-          </div>
-          
-          <div class="midia-container">
-            <div class="midia-img">
-              <img src="<?php echo $home_midia_img['url']; ?>" alt="<?php echo $home_midia_img['alt']; ?>">
             </div>
             <div class="midia-content">
               <div class="content-position">
@@ -122,8 +137,6 @@ get_header(); ?>
         
         </div>
       </section>
-      
-      <?php get_template_part( 'template-parts/content', 'newsletter' ); ?>
       
       <section id="home-parallax" class="banner-text parallax" style="background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(<?php echo $parallax_img; ?>) no-repeat center">
         <h3><?php echo $parallax_text; ?></h3>

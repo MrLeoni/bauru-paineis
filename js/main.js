@@ -49,21 +49,19 @@ jQuery(document).ready(function() {
   });
   
   // get height of an 'element' and apply on margin-top of the 'target'
-  // usefull to clear the main navigation menu from the wp admin bar, when logged in
   function clearElement(element, target) {
-    
-    // check to see if element exist and only execut the function if it's true
     if( element.length > 0 ) {
+      
       var value = element.css('height');
       target.css('margin-top', value);
+      
     }
-    
   }
   
   // clear the '.site-header' from wp admin bar when users are logged in
   clearElement(jQuery('#wpadminbar'), jQuery('.site-header'));
   
-  // creat a space behind of the '.site-header'. This way the content of the site will
+  // create a space behind of the '.site-header'. This way the content of the site will
   // not get hidden, since we are using position asolute in the header
   clearElement(jQuery('.site-header'), jQuery('.clear-header'));
   
@@ -101,48 +99,26 @@ jQuery(document).ready(function() {
   // Locals page function
   //-----------------------------------*/
   
-  jQuery('.js-btn-trigger').click(function() {
+  
+  jQuery('.js-expand').click(function() {
     
-    //Applying 'active' class only to the cliked button
-    jQuery(this).toggleClass('active');
+    var clickedId = jQuery(this).attr('id');
+    var arrow = jQuery('#' + clickedId + ' i.fa');
+    var element = jQuery('*[data-target="' + clickedId + '"]');
+    var elementDisplay = element.css('display');
     
-    // Remove 'active' class if the button clicked isn't the actual 'active' button
-    jQuery('.js-btn-trigger').not(jQuery(this)).removeClass('active');
-    
-    // Check if the button has class 'active' when its clicked
-    var classCheck = jQuery(this).hasClass('active');
-    
-    // Storing important elements in variables
-    // Get the clicked btn id
-    var btnId = jQuery(this).attr('id');
-    
-    // Using the button id to pick the correspondent '<article>'
-    var element = jQuery('article[data-post="' + btnId + '"]');
-    
-    // Get all <article> except the 'element'
-    var elementHide = jQuery('.local-post-content').not(jQuery(element));
-    
-    // If btn has 'active' class
-    if (classCheck) {
-      
-      // Hide all 'local-post-content'
-      elementHide.animate({opacity: "0"}, 200, function() {
-        elementHide.slideUp(200);
-      });
-      
-      // Show the correspondent '<article>'
-      element.slideDown(200, function() {
-        element.animate({opacity: "1"}, 200);
-      });
-      
+    if ( elementDisplay === 'none') {
+      element.slideDown(200);
+      arrow.removeClass('fa-caret-down');
+      arrow.addClass('fa-caret-up');
     } else {
-      
-      element.animate({opacity: "0"}, 200, function() {
-        element.slideUp(200);
-      });
+      element.slideUp(200);
+      arrow.removeClass('fa-caret-up');
+      arrow.addClass('fa-caret-down');
     }
     
   });
+  
   
   
   

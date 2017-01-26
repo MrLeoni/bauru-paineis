@@ -20,7 +20,7 @@
     <link href="<?php bloginfo('stylesheet_directory'); ?>/assets/img/logo/favicon_32.png" rel="icon" size="32x32">
     
     <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet">
     
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->

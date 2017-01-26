@@ -54,8 +54,9 @@ get_header(); ?>
               
               // Get the category slug
               $cat_slug = $cat->slug;
+              $cat_ID = $cat->term_id;
               
-              // Push the category slug into the 'locais taxonomy' array
+              // Push the category slug in the '$locais_taxonomy' array
               $locais_taxonomy['terms'] = "$cat_slug";
               
               // Creating posts query arguments
@@ -68,30 +69,31 @@ get_header(); ?>
               
               <div class="locals-category">
                   
-                <h2><?php echo $cat->name; ?></h2>
+                <h2 id="category-<?php echo $cat_ID; ?>" class="js-expand" title="Clique para expandir"><?php echo $cat->name; ?> <span class="title-icon"><i class="fa fa-caret-down" aria-hidden="true"></i></span></h2>
                 
-                <?php
-                // Starting the 'while loop' to display the post that belong to
-                // this category
-                while($locais_posts->have_posts()): $locais_posts->the_post();
-                
-                // Using id to differentiate posts
-                $post_ID = get_the_ID();
-                ?>
-                  <section class="local-post">
-                    <button id="post-<?php echo $post_ID; ?>" title="Mais Informações" class="local-post-trigger js-btn-trigger">
-                      <h3><?php the_title(); ?> <span class="title-icon"><i class="fa fa-caret-down" aria-hidden="true"></i></span></h3>
-                    </button>
-                    <article class="local-post-content" data-post="post-<?php echo $post_ID; ?>">
-                      <?php the_content(); ?>
-                    </article>
-                  </section>
-                <?php
-                // Ending 'while loop'
-                endwhile;
-                // Reset post data
-                wp_reset_postdata(); ?>
-                
+                <section data-target="category-<?php echo $cat_ID; ?>" class="local-post-wrapper">
+                  <?php
+                  // Starting the 'while loop' to display the post that belong to
+                  // this category
+                  while($locais_posts->have_posts()): $locais_posts->the_post();
+                  
+                  // Using id to differentiate posts
+                  $post_ID = get_the_ID();
+                  ?>
+                    <div class="local-post">
+                      <button id="post-<?php echo $post_ID; ?>" title="Clique para expandir" class="local-post-trigger js-expand">
+                        <h3><?php the_title(); ?> <span class="title-icon"><i class="fa fa-caret-down" aria-hidden="true"></i></span></h3>
+                      </button>
+                      <article class="local-post-content" data-target="post-<?php echo $post_ID; ?>">
+                        <?php the_content(); ?>
+                      </article>
+                    </div>
+                  <?php
+                  // Ending 'while loop'
+                  endwhile;
+                  // Reset post data
+                  wp_reset_postdata(); ?>
+                </section>
               </div>
                 
               <?php 

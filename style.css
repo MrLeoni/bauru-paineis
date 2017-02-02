@@ -4,7 +4,7 @@ Theme URI: http://underscores.me/
 Author: Agência Delucca
 Author URI: http://agenciadelucca.com.br/
 Description: Tema em WordPress feito exclusivamente para a empresa Bauru Painéis.
-Version: 1.1.0
+Version: 1.2.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: bauru-paineis
@@ -40,11 +40,12 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
   5.10 Blog
   5.11 Midia
   5.12 Locals
-  5.13 Resp & Ambiental
-  5.14 Contact
-  5.15 Footer
-  5.16 404 Page
-  5.17 Queries
+  5.13 Single Local
+  5.14 Resp & Ambiental
+  5.15 Contact
+  5.16 Footer
+  5.17 404 Page
+  5.18 Queries
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
 1.0 Navigation
@@ -387,6 +388,7 @@ ul {
   color: #0c4da2;
   font-size: 3em;
   font-weight: 400;
+  text-align: center;
 }
 
 .section-title {
@@ -647,26 +649,25 @@ ul {
 }
 
 /*-------------------------------------
-5.8 Home
+5.X Home
 -------------------------------------*/
 
 .banner-text h1 {
   max-width: 380px;
   color: #fff;
   font-size: 3.2em;
-  font-family: "carnac-bold", "Raleway", sans-serif;
-  font-weight: bold;
+  font-weight: 400;
   text-shadow: 0 2px 6px rgba(0,0,0,0.7);
 }
 
 #home-content.section-wrapper h2 {
   color: #0c4da2;
   font-size: 1.8em;
-  font-weight: normal;
+  font-weight: 400;
 }
 
-#home-midia-local.section-wrapper {
-  padding-top: 0;
+#home-locals.section-wrapper {
+  padding: 3% 0 0;
 }
 
 #home .midia-container {
@@ -674,21 +675,26 @@ ul {
   float: none;
 }
 
-#home .midia-container .midia-content:first-child {
+#home .midia-container:nth-child(1) {
   background-color: #0c4da2;
 }
 
-
-#home .midia-container .midia-content:last-child {
+#home .midia-container:nth-child(2) {
   background-color: #ed1c24;
 }
 
-#home .midia-content {
+#home .midia-content,
+#home .midia-img {
   height: 385px;
 }
 
 #home .content-position {
   width: 50%;
+}
+
+#home .midia-img img {
+  top: 49.9%;
+  left: 40%;
 }
 
 #home .midia-container:nth-child(1) .midia-img:before {
@@ -755,7 +761,7 @@ ul {
 #home-clients h2 {
   color: #0c4da2;
   font-size: 2.2em;
-  font-weight: normal;
+  font-weight: 400;
 }
 
 .clients-wrapper {
@@ -802,8 +808,7 @@ ul {
   float: right;
   text-transform: uppercase;
   font-size: 1em;
-  font-family: "carnac-bold", "Raleway", sans-serif;
-  font-weight: bold;
+  font-weight: 500;
 }
 
 /*-------------------------------------
@@ -825,9 +830,11 @@ ul {
 5.10 Blog
 -------------------------------------*/
 
-.section-wrapper .blog-title h1 {
+.section-wrapper .blog-title h2 {
+  margin-bottom: 40px;
   text-align: center;
   font-size: 2.4em;
+  color: #0c4da2;
 }
 
 .blog-gallery:after {
@@ -1128,10 +1135,6 @@ ul {
   font-size: 1.4em;
 }
 
-.locals-wrapper .local-post-content {
-  text-align: left;
-}
-
 .local-post-content {
   display: none;
   padding: 20px;
@@ -1139,14 +1142,74 @@ ul {
   color: #0c4da2;
 }
 
-.local-post-content:after {
-  content: '';
-  display: table;
-  clear: both;
+.local-post-content img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto 30px;
+}
+
+.local-post-content .btn {
+  margin-top: 30px;
 }
 
 /*-------------------------------------
-5.13 Resp & Ambiental
+5.13 Single Local
+-------------------------------------*/
+
+.other-locals {
+  padding: 10px 0 0;
+  font-size: 1.3em;
+  border-bottom: 1px solid #b5b5b5;
+  -webkit-transition: 0.2s ease-out;
+  transition: 0.2s ease-out;
+}
+
+.other-locals a:link,
+.other-locals a:visited {
+  color: #a5a5a5;
+  text-decoration: none;
+  position: relative;
+  left: 0;
+}
+
+.other-locals:hover,
+.other-locals a:hover,
+.other-locals a:active {
+  color: #0c4da2;
+  border-color: #0c4da2;
+  left: 5px;
+}
+
+.local-slider-wrapper {
+  margin: 0 0 40px;
+}
+
+.local-slider-wrapper .bx-wrapper .bx-viewport {
+  border: 0;
+  left: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.local-slider-wrapper .bx-wrapper .bx-prev {
+  left: -42px;
+  z-index: 9999;
+}
+
+.local-slider-wrapper .bx-wrapper .bx-next {
+  right: -30px;
+  z-index: 9999;
+}
+
+.local-content {
+  color: #222;
+  font-size: 1.2em;
+}
+
+
+/*-------------------------------------
+5.14 Resp & Ambiental
 -------------------------------------*/
 
 #responsability.section-wrapper {
@@ -1270,7 +1333,7 @@ ul {
 }
 
 /*-------------------------------------
-5.15 Footer
+5.16 Footer
 -------------------------------------*/
 
 .site-footer {
@@ -1344,7 +1407,7 @@ ul {
 }
 
 /*-------------------------------------
-5.16 404
+5.17 404
 -------------------------------------*/
 
 .not-found.section-wrapper {
@@ -1355,7 +1418,7 @@ ul {
 }
 
 /*-------------------------------------
-5.17 Queries
+5.18 Queries
 -------------------------------------*/
 
 @media (max-width: 1440px) {
@@ -1516,6 +1579,18 @@ ul {
     width: 100%;
     padding: 30px 10px;
     font-size: 1.0em;
+  }
+  
+  /* Single Local */
+  
+  .local-slider-wrapper .bx-wrapper .bx-prev {
+    left: 0;
+    background: linear-gradient(rgba(255,255,255,0.2), rgba(255,255,255,0.2)), url(../bauru-paineis/assets/bxslider/controls.png) no-repeat 0 0;
+  }
+  
+  .local-slider-wrapper .bx-wrapper .bx-next {
+    right: 0;
+    background: linear-gradient(rgba(255,255,255,0.2), rgba(255,255,255,0.2)), url(../bauru-paineis/assets/bxslider/controls.png) no-repeat 0 -40px;
   }
   
   /* Contact */

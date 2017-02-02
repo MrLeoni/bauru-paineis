@@ -4,16 +4,9 @@
 $post_type = get_field('post-type');
 
 // Creating a post query
-
-if( is_front_page()) {
-  $post_query = new WP_Query(array( 
-    "post_type" => "$post_type",
-    'posts_per_page' => 12,
-    'orderby' => 'rand'
-  ));
-} else {
-  $post_query = new WP_Query(array( "post_type" => "$post_type" ));
-}
+$post_query = new WP_Query(array( 
+  "post_type" => "$post_type" 
+));
 
 ?>
 
@@ -21,13 +14,7 @@ if( is_front_page()) {
   <div class="container">
     
     <div class="blog-title">
-      <?php 
-        if( is_front_page()) {
-          echo '<h1>Portfólio</h1>';
-        } else {
-          echo '<h1>' . get_the_title() . '</h1>';
-        }
-      ?>
+      <?php echo '<h1>' . get_the_title() . '</h1>'; ?>
     </div>
     
     <div class="blog-gallery">
@@ -44,25 +31,13 @@ if( is_front_page()) {
       ?>
     </div>
     
-    <?php 
-      if(is_front_page()) { ?>
-        
-        <div class="blog-link">
-          <a class="btn btn-red" href="#" title="Ver todos">Ver Todos</a>
-        </div>
-        
-      <?php } else { ?>
-      
-      <div class="blog-text">
-        <?php
-        while ( have_posts() ) : the_post();
-          the_content();
-        endwhile; // End of the loop.
-        ?>
-      </div> 
-      
-      <?php }
-    ?>
+    <div class="blog-text">
+      <?php
+      while ( have_posts() ) : the_post();
+        the_content();
+      endwhile; // End of the loop.
+      ?>
+    </div> 
     
   </div>
 </section>

@@ -29,10 +29,18 @@ Its a theme for __content__ administration, therefore the capabillity for change
 
 ## Versions:
 
+### 1.2.0 - 02/02/2017
+* Criada uma página interna para os posts do tipo "Local"
+* Desfeita alteração nº3 da versão anterior
+* "Locais" assime lugar de "Portfólio" na home page
+
+<br>
+<br>
+
 ### 1.1.0 - 26/01/2017
 * Logo alterado, Borda azul trocada por sombreamento
-* Adicionada font nova ao site.
-* Seção #home-resume movida para cima da seção #home-midia-local. E layout da seção #home-midia-local trocado.
+* Adicionada font nova ao site
+* Seção #home-resume movida para cima da seção #home-midia-local. E layout da seção #home-midia-local trocado
 * Retirada seção 'cadastre-se para recebimento newsletter'
 * Ordenção de posts trocada para 'random'
 * Retirado texto centralizado automático na página "Locais"

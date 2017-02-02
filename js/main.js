@@ -122,6 +122,31 @@ jQuery(document).ready(function() {
   
   
   
+  /*-------------------------------------
+  // Single local page
+  //-----------------------------------*/
+  jQuery('.local-slider')
+  .bxSlider({
+    pager: false,
+    auto: true,
+    autoHover: true,
+    speed: 600,
+    pause: 7000
+  })
+  .magnificPopup({
+    delegate: 'a',
+    type: 'image',
+    gallery: {
+      enabled: true,
+      tCounter: '',
+    }
+  });
+  
+  
+  
+  
+  
+  
    /*-------------------------------------
   // Blog page function
   //-----------------------------------*/

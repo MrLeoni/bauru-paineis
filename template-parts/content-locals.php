@@ -69,14 +69,9 @@ $locais_taxonomy = array(
             $post_ID = get_the_ID();
             ?>
             <div class="local-post">
-              <button id="post-<?php echo $post_ID; ?>" title="Clique para expandir" class="local-post-trigger js-expand">
-                <h3><?php the_title(); ?> <span class="title-icon"><i class="fa fa-caret-down" aria-hidden="true"></i></span></h3>
-              </button>
-              <article class="local-post-content" data-target="post-<?php echo $post_ID; ?>">
-                <?php the_post_thumbnail('large'); 
-                the_excerpt(); ?>
-                <a class="btn btn-white bg-blue" href="<?php the_permalink(); ?>">Ver mais detalhes</a>
-              </article>
+              <a href="<?php the_permalink(); ?>" title="<?php echo get_the_title(); ?>" id="post-<?php echo $post_ID; ?>" title="Clique para expandir" class="local-post-trigger">
+                <h3><?php the_title(); ?></h3>
+              </a>
             </div>
             <?php
             // Ending 'while loop'

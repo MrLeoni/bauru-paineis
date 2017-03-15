@@ -11,7 +11,7 @@ $thumb_url = wp_get_attachment_image_src($thumb_id, "full", true);
 
 get_header(); ?>
 
-  <section class="banner" style="background: url(<?php echo $thumb_url[0]; ?>) no-repeat center">
+  <section class="banner narrow-banner" style="background: url(<?php echo $thumb_url[0]; ?>) no-repeat center">
 		<!-- empty -->
 	</section>
 

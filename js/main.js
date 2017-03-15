@@ -142,6 +142,10 @@ jQuery(document).ready(function() {
     }
   });
   
+  jQuery('.local-content').on('click', '#js-print', function() {
+    window.print();
+  });
+  
   
   
   

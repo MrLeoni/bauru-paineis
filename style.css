@@ -4,7 +4,7 @@ Theme URI: http://underscores.me/
 Author: Agência Delucca
 Author URI: http://agenciadelucca.com.br/
 Description: Tema em WordPress feito exclusivamente para a empresa Bauru Painéis.
-Version: 1.2.0
+Version: 1.2.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: bauru-paineis
@@ -370,6 +370,10 @@ ul {
   padding: 482px 0 0;
 }
 
+.banner.narrow-banner {
+  padding: 270px 0 0;
+}
+
 .banner-text {
   padding: 125px 0 158px;
 }
@@ -386,7 +390,7 @@ ul {
 .section-wrapper h1 {
   margin: 0 0 40px;
   color: #0c4da2;
-  font-size: 3em;
+  font-size: 2.6em;
   font-weight: 400;
   text-align: center;
 }
@@ -1088,24 +1092,19 @@ ul {
   border-bottom-width: 0;
 }
 
-.local-post-trigger {
+.local-post-trigger:link,
+.local-post-trigger:visited {
   display: block;
   width: 100%;
   padding: 1% 0;
   border: 0;
   border-bottom: 1px solid #fff;
   background-color: #0c4da2;
-  -webkit-transition: 0.2s ease-out;
-  transition: 0.2s ease-out;
+  text-decoration: none;
 }
 
 .local-post-trigger:hover {
   background-color: #0c69e4;
-}
-
-.local-post-trigger:hover .title-icon,
-.local-post-trigger:focus .title-icon {
-  color: #0c4da2;
 }
 
 .local-post-trigger:focus {
@@ -1123,16 +1122,6 @@ ul {
   overflow: hidden;
   color: #fff;
   font-weight: normal;
-}
-
-.title-icon {
-  position: absolute;
-  top: 45%;
-  right: 22px;
-  -webkit-transform: translate(0, -50%);
-  transform: translate(0, -50%);
-  color: #0c69e4;
-  font-size: 1.4em;
 }
 
 .local-post-content {
@@ -1160,14 +1149,14 @@ ul {
 .other-locals {
   padding: 10px 0 0;
   font-size: 1.3em;
-  border-bottom: 1px solid #b5b5b5;
   -webkit-transition: 0.2s ease-out;
   transition: 0.2s ease-out;
 }
 
 .other-locals a:link,
 .other-locals a:visited {
-  color: #a5a5a5;
+  color: #0c4da2;
+  font-weight: 300;
   text-decoration: none;
   position: relative;
   left: 0;
@@ -1176,9 +1165,16 @@ ul {
 .other-locals:hover,
 .other-locals a:hover,
 .other-locals a:active {
-  color: #0c4da2;
-  border-color: #0c4da2;
+  color: #a5a5a5;
   left: 5px;
+}
+
+.single-local .btn.btn-white {
+  margin: 35px 0 15px;
+}
+
+.single-local .btn.btn-white i {
+  margin-right: 10px;
 }
 
 .local-slider-wrapper {
@@ -1205,6 +1201,63 @@ ul {
 .local-content {
   color: #222;
   font-size: 1.2em;
+}
+
+.local-content table,
+.local-content tr,
+.local-content td {
+  width: 100%;
+  height: auto;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+table.local-info tr,
+table.local-info td {
+  padding: 10px 5px;
+  color: #0c4da2;
+}
+
+.local-info tr:nth-child(odd) {
+  background-color: #e3f1fc;
+}
+
+.local-infor tr:nth-child(even) {
+  background-color: #f4f9ff;
+}
+
+.local-info .vdm {
+  color: #ff0000;
+}
+
+.local-content .addtoany_share_save_container {
+  display: inline-block;
+  margin: 35px 0 0;
+}
+
+.local-print {
+  display: inline-block;
+  padding: 0px 6px;
+  border: 0;
+  border-radius: 5px;
+  position: relative;
+  top: -2px;
+  opacity: 1;
+  background-color: #0166ff;
+  font-size: 1.4em;
+  color: #fff;
+}
+
+.local-print:hover,
+.local-print:focus {
+  outline: none;
+  opacity: 0.6;
+}
+
+.local-print i {
+  position: relative;
+  top: 2px;
 }
 
 
@@ -1781,6 +1834,26 @@ ul {
   .midia-img img {
     width: 100%;
     height: auto;
+  }
+  
+}
+
+@media print {
+  
+  li.image-print {
+    display: block!important;
+  }
+  
+  header,
+  footer,
+  .single-locals.banner,
+  .local-slider li,
+  .local-print {
+    display: none;
+  }
+  
+  .addtoany_share_save_container {
+    display: none!important;
   }
   
 }

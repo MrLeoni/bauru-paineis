@@ -29,6 +29,12 @@ Its a theme for __content__ administration, therefore the capabillity for change
 
 ## Versions:
 
+### 1.2.1 - 15/03/17
+* Layout da página dos 'Locais' (interna), melhorado e aperfeiçoada para impressão
+
+<br>
+<br>
+
 ### 1.2.0 - 02/02/2017
 * Criada uma página interna para os posts do tipo "Local"
 * Desfeita alteração nº3 da versão anterior

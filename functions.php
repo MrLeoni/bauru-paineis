@@ -245,6 +245,47 @@ function locaisPostType() {
 }
 
 /**
+ * banner custom post type
+ */
+add_action("init", "bannerPostType");
+function bannerPostType() {
+	
+	// Registering new Custom Post Type
+	$labels_post = array( 
+		"name" => "Banners",
+		"singular_name" => "Banner",
+		
+	);	
+	$args_post = array(
+		"labels" => $labels_post,
+		"supports" => array("title", "editor", "thumbnail"),
+		"menu_position" => 7,
+		"menu_icon" => "dashicons-images-alt",
+		"public"	=> true,
+		"publicly_queryable" => true,
+		"show_in_menu"	=> true,
+	);
+	register_post_type("banner", $args_post);
+	
+	// Registering new Taxonomy
+	$labels_taxonomy = array(
+		"name" => "Categorias de Banner",
+		"singular_name" => "Categoria de Banner",
+	);
+	$args_taxonomy = array(
+		"labels"	=> $labels_taxonomy,
+		"show_ui"	=> true,
+		"show_in_menu"	=> true,
+		"show_tagcloud"	=> false,
+		'show_admin_column' => true,
+		"hierarchical"	=> true,
+		"capabilities"	=> array("manage_terms", "edit_terms", "delete_terms", "assign_terms"),
+	);
+	register_taxonomy("banner-categorias", "banner", $args_taxonomy);
+	
+}
+
+/**
  * complementos custom post type
  */
 add_action("init", "complementosPostType");

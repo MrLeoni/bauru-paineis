@@ -656,6 +656,32 @@ ul {
 5.X Home
 -------------------------------------*/
 
+.banner-slider-wrapper .bx-wrapper {
+  margin: 0;
+}
+
+.banner-slider-wrapper .bx-wrapper .bx-viewport {
+  box-shadow: none;
+  border: 0;
+  left: 0;
+  background: #fff;
+  transform: translatez(0);
+}
+
+.banner-slider-wrapper .bx-wrapper .bx-pager, 
+.banner-slider-wrapper .bx-wrapper .bx-controls-auto {
+  bottom: 30px;
+}
+
+.banner-slider-wrapper .bx-wrapper .bx-pager.bx-default-pager a {
+  background-color: #e70514;
+}
+
+.banner-slider-wrapper .bx-wrapper .bx-pager.bx-default-pager a:hover,
+.banner-slider-wrapper .bx-wrapper .bx-pager.bx-default-pager a.active {
+  background-color: #0c4da2;
+}
+
 .banner-text h1 {
   max-width: 380px;
   color: #fff;
@@ -1320,12 +1346,23 @@ table.local-info td {
   float: left;
 }
 
+.content-box.praca img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
 .even article:nth-child(odd) .content-box:first-child {
   padding-left: 5%;
   position: relative;
   top: 5px;
   left: 0;
   z-index: 99;
+}
+
+.even article:nth-child(odd) .content-box.praca:first-child {
+  top: 0;
 }
 
 .even article:nth-child(odd) .content-box:last-child {
@@ -1490,6 +1527,10 @@ table.local-info td {
   
   .even article:nth-child(odd) .content-box:first-child {
     left: -13%;
+  }
+  
+  .even article:nth-child(odd) .content-box.praca {
+    left: 0;
   }
   
   .even article:nth-child(even) .content-box:last-child {

@@ -29,7 +29,7 @@ get_header(); ?>
 		<section id="responsability" class="section-wrapper even">
 			
 			<article class="content-container">
-				<div class="content-box">
+				<div class="content-box praca">
 					<img class="hidden-xs hidden-sm" src="<?php echo $img_01['url']; ?>" alt="<?php echo $img_01['alt']; ?>">
 				</div>
 				<div class="content-box">

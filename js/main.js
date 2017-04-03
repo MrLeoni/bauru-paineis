@@ -68,6 +68,18 @@ jQuery(document).ready(function() {
   
   
   /*-------------------------------------
+  // Home page
+  //-----------------------------------*/
+  jQuery('.banner-slider').bxSlider({
+    controls: false,
+     speed: 600,
+     pause: 7000,
+     auto: true,
+     mode: 'fade',
+  });
+  
+  
+  /*-------------------------------------
   // Blog page function
   //-----------------------------------*/
   

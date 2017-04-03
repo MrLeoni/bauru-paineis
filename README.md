@@ -29,6 +29,12 @@ Its a theme for __content__ administration, therefore the capabillity for change
 
 ## Versions:
 
+### 1.3.1 - 02/04/17
+* Banner principal na home page transformado para rotativo
+
+<br>
+<br>
+
 ### 1.2.1 - 15/03/17
 * Layout da página dos 'Locais' (interna), melhorado e aperfeiçoada para impressão
 

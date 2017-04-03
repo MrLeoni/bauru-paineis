@@ -14,7 +14,7 @@
  
 // Get all taxonomy terms inside the 'locais-categorias'. If is home page, get only 8 categories
 if (is_front_page()) {
-  $cats = get_terms(array('taxonomy' => 'locais-categorias', 'number' => 8));
+  $cats = get_terms(array('taxonomy' => 'locais-categorias', 'number' => 4));
 } else {
   $cats = get_terms(array('taxonomy' => 'locais-categorias'));
 }
